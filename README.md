@@ -5,6 +5,10 @@
 
 A powerful educational tool designed to create files that are valid in multiple formats simultaneously (e.g., JPEG + PDF), enabling advanced steganography and file structure research.
 
+<p align="center">
+  <img src="polyglot.png" alt="Polyglot Tool UI" width="800">
+</p>
+
 > [!WARNING]
 > **Educational Purposes Only**: This tool is designed for educational purposes and security research. The authors are not responsible for any misuse.
 
