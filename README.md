@@ -19,7 +19,7 @@ A powerful educational tool designed to create files that are valid in multiple 
 - 🖱️ **Interactive Mode**: Easy-to-use wizard for selecting files and output names.
 - 🛡️ **Auto-Injection**: Automatically handles complex chunk injection and comment segmentation.
 - 🧠 **Smart Validation**: Automatically strips quotes from drag-and-drop paths and verifies files.
-- � **Organized Output**: Automatically saves results to a dedicated directory with smart naming.
+- 📄 **Organized Output**: Automatically saves results to a dedicated directory with smart naming.
 
 ## Installation
 
