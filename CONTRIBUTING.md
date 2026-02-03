@@ -1,67 +1,50 @@
-# Contributing to Polyglot-File
+# Contributing to Polyglot File Generator
 
 First off, thanks for taking the time to contribute! 🎉
 
-The following is a set of guidelines for contributing to Polyglot-File. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to this project. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
-
-## How Can I Contribute?
+## 🛠️ How to Contribute
 
 ### Reporting Bugs
-
-This section guides you through submitting a bug report. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
-
-- **Use a clear and descriptive title** for the issue to identify the problem.
-- **Describe the exact steps which reproduce the problem** in as many details as possible.
-- **Provide specific examples** to demonstrate the steps. Include links to files or GitHub projects, or copy/pasteable snippets, which you use in those examples.
-- **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.
-- **Explain which behavior you expected to see instead and why.**
+This section guides you through submitting a bug report.
+*   **Search existing issues** to see if the problem has already been reported.
+*   **Create a new issue** and provide as much detail as possible:
+    *   **Steps to reproduce**: How can we see the bug ourselves?
+    *   **Expected behavior**: What did you expect to happen?
+    *   **Actual behavior**: What actually happened?
+    *   **Screenshots/Logs**: Any visual proof or error messages.
 
 ### Suggesting Enhancements
-
-This section guides you through submitting an enhancement suggestion, including completely new features and minor improvements to existing functionality.
-
-- **Use a clear and descriptive title** for the issue to identify the suggestion.
-- **Provide a step-by-step description of the suggested enhancement** in as many details as possible.
-- **Provide specific examples** to demonstrate the steps.
+*   Open an issue with the tag **enhancement**.
+*   Explain why this enhancement would be useful.
 
 ### Pull Requests
-
-The process described here has several goals:
-
-- Maintain the quality of the codebase.
-- Fix problems that are important to users.
-- Engage the community in working toward the best possible tools.
-
 1.  **Fork the repo** and create your branch from `main`.
-2.  **Ensure your code lints**.
-3.  **Test your changes**.
-4.  **Make sure your descriptive commit message** is clear.
-5.  **Push to your fork** and submit a pull request.
+2.  **Clone the repository** to your local machine.
+3.  **Install dependencies**: `pip install -r requirements.txt`.
+4.  **Make your changes**. 
+    *   Ensure file validation logic inside `polyglot_tool.py` is preserved.
+    *   Follow PEP 8 coding standards for Python.
+5.  **Test your changes**. Run the tool and verify Polyglot creation works as expected.
+6.  **Push** to your fork.
+7.  **Submit a Pull Request**!
 
-## Styleguides
+---
 
-### Python Styleguide
+## 💻 Specific Development Guidelines
 
-- Use [Black](https://github.com/psf/black) for code formatting.
-- Write clean, readable code with comments where necessary.
+### Python Environment
+*   We target **Python 3.8+**.
+*   We use **Rich** for the UI. Please don't introduce new heavy dependencies without discussion.
 
-### Git Commit Messages
+### Adding New Formats
+If you want to add support for a new format (e.g., ZIP, EXE):
+1.  Update `polyglot_tool.py` to handle the new injection logic.
+2.  Update the validation checks to ensure headers are preserved.
+3.  Ensure the file works in both target applications (e.g., Image Viewer and Archive Manager).
 
-- Use the present tense ("Add feature" not "Added feature").
-- Use the imperative mood ("Move cursor to..." not "Moves cursor to...").
-- Limit the first line to 72 characters or less.
-- Reference issues and pull requests liberally after the first line.
+---
 
-## Additional Notes
-
-### Issue and Pull Request Labels
-
-This section lists the labels we use to help us track and manage issues and pull requests.
-
-*   `bug` - Issues that are bugs.
-*   `enhancement` - Issues that are feature requests.
-*   `documentation` - Improvements or additions to documentation.
-*   `good first issue` - Good for newcomers.
-
-Thank you for contributing!
+## 📜 License
+By contributing, you agree that your contributions will be licensed under its MIT License.
