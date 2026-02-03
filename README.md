@@ -1,100 +1,71 @@
 # Polyglot File Generator
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status: Active](https://img.shields.io/badge/Status-Active-success.svg)]()
-![Platform: Windows](https://img.shields.io/badge/Platform-Windows-blue)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-A visual, interactive **Security Research Tool** designed to demonstrate data hiding by creating files that are valid in multiple formats simultaneously (e.g., JPEG + PDF). Built for security researchers, CTF players, and curious developers.
+A powerful educational tool designed to create files that are valid in multiple formats simultaneously (e.g., JPEG + PDF), enabling advanced steganography and file structure research.
 
-<p align="center">
-  <img src="polyglot.png" alt="Polyglot UI" width="800">
-</p>
+> [!WARNING]
+> **Educational Purposes Only**: This tool is designed for educational purposes and security research. The authors are not responsible for any misuse.
 
-## ✨ Features
+## Features
 
-- **Multi-Format Support**:
-  - **Image + PDF**: Creates a file that opens as an Image (JPG/PNG) but contains a hidden PDF.
-  - **Structure Injection**: Injects PDF headers into private chunks (PNG) or comment segments (JPG).
-- **Steganography Suite**:
-  - **Concealment**: Hide entire documents inside innocent-looking images.
-  - **Bypass**: Can potentially bypass file upload filters that only check extensions or magic bytes.
-- **🛡️ Educational Mode**:
-  - **Visualization**: See exactly where the data is injected.
-  - **Validation**: Ensures both formats remain valid.
-- **🚀 Interactive details**:
-  - **Wizard Mode**: Step-by-step interactive CLI.
-  - **Smart Naming**: Auto-generates output filenames.
+- 🖼️ **Multi-Format Support**: Generate valid `JPG+PDF` and `PNG+PDF` polyglots.
+- 🎨 **Premium UI**: Beautiful ASCII art banner and colored output using `rich`.
+- 🖱️ **Interactive Mode**: Easy-to-use wizard for selecting files and output names.
+- 🛡️ **Auto-Injection**: Automatically handles complex chunk injection and comment segmentation.
+- 🧠 **Smart Validation**: Automatically strips quotes from drag-and-drop paths and verifies files.
+- � **Organized Output**: Automatically saves results to a dedicated directory with smart naming.
 
----
+## Installation
 
-## 🛠️ Tech Stack
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/zis3c/Polyglot-File
+   cd Polyglot-File
+   ```
 
-*   **Core**: [Python 3.8+](https://www.python.org/)
-*   **UI/CLI**: [Rich](https://github.com/Textualize/rich) (for beautiful terminal output)
-*   **Standard Lib**: `struct`, `zlib`, `argparse`
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
----
+## Usage
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-1.  **Python 3.8+**
-
-### 📥 Installation
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/zis3c/Polyglot-File.git
-    cd Polyglot-File
-    ```
-
-2.  **Install Dependencies**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-### ▶️ Usage
-
-#### Interactive Mode (Recommended)
-Simply run the script to start the wizard:
+### Interactive Mode
+Simply run the script without arguments:
 ```bash
 python polyglot_tool.py
 ```
+Follow the prompts to drag-and-drop your Image and PDF files. The tool handles the rest.
 
-#### Command Line
+### Command Line Interface
+For advanced users or automation:
 ```bash
-python polyglot_tool.py --image input.jpg --pdf hidden.pdf --output result.jpg
+python polyglot_tool.py --help
 ```
 
----
+**Example Usage:**
+```bash
+python polyglot_tool.py --image "input.jpg" --pdf "hidden.pdf" --output result.jpg
+```
 
-## 🐛 Troubleshooting
+| Argument | Description |
+|----------|-------------|
+| `--image` | Path to the source JPEG or PNG image |
+| `--pdf` | Path to the source PDF document |
+| `--output` | (Optional) Desired output filename |
+| `--help` | Show the help message and exit |
 
-*   **"Unsupported Image" error?**
-    *   Ensure you are using standard JPG or PNG files.
-*   **File not opening?**
-    *   Some PDF viewers are stricter than others. Try opening the result in Chrome or Adobe Reader.
+## How It Works
 
----
+1. **Parsing**: Validates the input image structure (PNG chunks or JPG markers).
+2. **Injection**: 
+   - **PNG**: Injects a custom `pDfH` chunk containing the PDF header and startstream.
+   - **JPG**: Injects the PDF header into a specially crafted comment (`COM`) segment.
+3. **Appending**: Appends the full PDF body after the image data, wrapped in a PDF stream.
+4. **Result**: The file is a valid image (ignoring the hidden data) and a valid PDF (starting from the injected header).
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1.  Fork the project
-2.  Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
-
----
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-<center>Built with ❤️ by <b>@zis3c</b></center>
