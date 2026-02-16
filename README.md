@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-A powerful educational tool designed to create files that are valid in dual formats simultaneously (e.g., JPEG + PDF), enabling advanced steganography and file structure research.
+A powerful educational tool designed to create files that are valid in multi formats simultaneously (e.g., JPEG + PDF), enabling advanced steganography and file structure research.
 
 <p align="center">
   <img src="polyglot.png" alt="Polyglot Tool UI" width="800">
