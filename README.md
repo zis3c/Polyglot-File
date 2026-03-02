@@ -1,7 +1,8 @@
-# Polyglot File Generator
+# Polyglot File Generator 🖼️📄
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 
 A simple educational tool designed to create files that are valid in multi formats simultaneously (e.g., JPEG + PDF), enabling advanced steganography and file structure research.
 
@@ -9,10 +10,12 @@ A simple educational tool designed to create files that are valid in multi forma
   <img src="polyglot.png" alt="Polyglot Tool UI" width="800">
 </p>
 
+📺 **Video Tutorial:** [**Watch how to use the repo here**](https://youtu.be/5oVx4ZH_fLc)
+
 > [!WARNING]
 > **Educational Purposes Only**: This tool is designed for educational purposes and security research. The authors are not responsible for any misuse.
 
-## Features
+## ✨ Features
 
 - 🖼️ **Multi-Format Support**: Generate valid `JPG+PDF` and `PNG+PDF` polyglots.
 - 🎨 **Premium UI**: Beautiful ASCII art banner and colored output using `rich`.
@@ -21,20 +24,7 @@ A simple educational tool designed to create files that are valid in multi forma
 - 🧠 **Smart Validation**: Automatically strips quotes from drag-and-drop paths and verifies files.
 - 📄 **Organized Output**: Automatically saves results to a dedicated directory with smart naming.
 
-## Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/zis3c/Polyglot-File
-   cd Polyglot-File
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Project Structure
+## 📂 Project Structure
 
 ```text
 Polyglot-File/
@@ -48,9 +38,20 @@ Polyglot-File/
 └── polyglot_results/       # Directory for output polyglot files
 ```
 
-## Usage
+## 🚀 Installation
 
-📺 **Video Tutorial**: [Watch how to use the repo here](https://youtu.be/5oVx4ZH_fLc)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/zis3c/Polyglot-File.git
+   cd Polyglot-File
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## 🛠 Usage
 
 ### Interactive Mode
 Simply run the script without arguments:
@@ -77,7 +78,7 @@ python polyglot_tool.py --image "input.jpg" --pdf "hidden.pdf" --output result.j
 | `--output` | (Optional) Desired output filename |
 | `--help` | Show the help message and exit |
 
-## How It Works
+## ⚙️ How It Works
 
 1. **Parsing**: Validates the input image structure (PNG chunks or JPG markers).
 2. **Injection**: 
@@ -86,6 +87,10 @@ python polyglot_tool.py --image "input.jpg" --pdf "hidden.pdf" --output result.j
 3. **Appending**: Appends the full PDF body after the image data, wrapped in a PDF stream.
 4. **Result**: The file is a valid image (ignoring the hidden data) and a valid PDF (starting from the injected header).
 
-## License
+## 🤝 Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
