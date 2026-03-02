@@ -34,7 +34,23 @@ A simple educational tool designed to create files that are valid in multi forma
    pip install -r requirements.txt
    ```
 
+## Project Structure
+
+```text
+Polyglot-File/
+├── polyglot_tool.py        # Main script to create polyglot files
+├── requirements.txt        # Python dependencies
+├── CONTRIBUTING.md         # Contribution guidelines
+├── LICENSE                 # MIT License file
+├── README.md               # Project documentation
+├── polyglot.png            # UI Preview image
+├── input_files/            # Directory for input files
+└── polyglot_results/       # Directory for output polyglot files
+```
+
 ## Usage
+
+📺 **Video Tutorial**: [Watch how to use the repo here](https://youtu.be/5oVx4ZH_fLc)
 
 ### Interactive Mode
 Simply run the script without arguments:
